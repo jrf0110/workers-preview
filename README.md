@@ -8,7 +8,16 @@
 npm install workers-preview
 ```
 
+**Usage**
+
+```bash
+# Open the script previewer
+npm run preview
+```
+
 **package.json**
+
+Edit your `package.json` to include the preview script. Pipe the file you want to preview into the `workers-preview` cli.
 
 ```javascript
 {
