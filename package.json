@@ -1,0 +1,14 @@
+{
+  "name": "workers-preview",
+  "version": "1.0.0",
+  "description": "Preview your workers script via an npm-script",
+  "main": "bin/workers-preview.js",
+  "bin": {
+    "workers-preview": "bin/workers-preview.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Fawcett",
+  "license": "ISC"
+}
