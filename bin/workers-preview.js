@@ -1,3 +1,5 @@
+#!/usr/local/bin/node
+
 const fs = require('fs')
 const request = require('https').request
 const spawn = require('child_process').spawn
