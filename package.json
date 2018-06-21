@@ -1,6 +1,6 @@
 {
   "name": "workers-preview",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Preview your workers script via an npm-script",
   "main": "bin/workers-preview.js",
   "bin": {
