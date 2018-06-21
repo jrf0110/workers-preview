@@ -1,8 +1,8 @@
 #!/usr/local/bin/node
 
 const fs = require('fs')
+const opn = require('opn')
 const request = require('https').request
-const spawn = require('child_process').spawn
 
 let input = process.argv.find((arg, i) => process.argv[i - 1] === '--input')
 
@@ -29,9 +29,7 @@ main()
 function main() {
   const req = request(options.request, res => {
     readJSONFromResponse(res).then(body => {
-      const open = spawn('open', [
-        `https://${options.request.hostname}/#${body.id}:${options.previewUrl}`,
-      ])
+      opn(`https://${options.request.hostname}/#${body.id}:${options.previewUrl}`)
     })
   })
 
