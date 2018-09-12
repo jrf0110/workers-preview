@@ -29,7 +29,7 @@ main()
 function main() {
   const req = request(options.request, res => {
     readJSONFromResponse(res).then(body => {
-      opn(`https://${options.request.hostname}/#${body.id}:${options.previewUrl}`)
+      opn(`https://${options.request.hostname}/#${body.id}:${options.previewUrl}`, { wait: false })
     })
   })
 
