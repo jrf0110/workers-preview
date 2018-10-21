@@ -29,10 +29,11 @@ main()
 function main() {
   const req = request(options.request, res => {
     readJSONFromResponse(res).then(body => {
-      opn(`https://${options.request.hostname}/#${body.id}:${options.previewUrl}`, { wait: false })
+      opn(`https://${options.request.hostname}/#${body.id}:${options.previewUrl}`, {
+        wait: false,
+      })
     })
   })
-
   options.input.pipe(
     req,
     { end: true },
@@ -48,6 +49,7 @@ function readJSONFromResponse(res) {
     })
 
     res.once('end', () => {
+      if (res.statusCode >= 400) return reject(new Error(data))
       try {
         const body = JSON.parse(data)
         resolve(body)
